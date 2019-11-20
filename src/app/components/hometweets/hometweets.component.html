@@ -1,0 +1,116 @@
+<div class="nav">
+    <img src="../../../assets/Soft.png">
+</div>
+<div class="container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                aria-selected="true">Tweets</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                aria-selected="false">Dashboard</a>
+        </li>
+
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="row" style="width: 100%; margin: 0 !important">
+                <div class="col-4">
+                    <div class="filtros">
+                        <form>
+            
+                            <div class="dropdown"
+                                style="text-align: start !important; width: 100% !important; background: transparent !important;">
+                                <button
+                                    style="text-align: start !important; width: 100% !important; background: transparent !important; color: black; border: 1px solid #aba5a5;"
+                                    class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <h5 style="display: flex;
+                                                    flex-direction: row;
+                                                    justify-content: space-between;
+                                                    align-items: center;">Ordenar por <i style="font-size: 15px !important"
+                                            class="fa fa-arrow-down" aria-hidden="true"></i></h5>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <button type="button" class="dropdown-item" (click)="buscar('positive')">Positivo</button>
+                                    <button type="button" class="dropdown-item" (click)="buscar('negative')">Negativo</button>
+                                    <button type="button" class="dropdown-item" (click)="buscar('neutral')">Neutral</button>
+                                </div>
+                            </div>
+            
+            
+            
+                            <button class="btn btn-danger" style="margin-top: 2rem " (click)="cancelarBus()" *ngIf="bsq != null">Ver
+                                todos</button>
+            
+                        </form>
+            
+                    </div>
+                    <div id="chartContainer" style="width:100%; height:300px;"></div>
+                </div>
+                <div class="col-8">
+                    <div class="load" *ngIf="status ==  'process'" style="width: 100%; text-align: center">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                    <div class="tweets">
+            
+                        <div class="tweet" *ngFor="let tw of tweets">
+                            <div class="tweet-cabecera">
+                                <div class="imgUser">
+                                    <img src="../../../assets/user.png">
+                                </div>
+                                <div class="user">
+                                    <h3>{{tw.name}}</h3>
+                                </div>
+                            </div>
+                            <div class="tweet-content">
+                                <p>{{tw.text}}</p>
+                            </div>
+                            <div class="tweet-footer">
+                                <div class="footer-like">
+                                    <i class="fa fa-heart" aria-hidden="true"></i> {{tw.favorite_count}}
+                                </div>
+                                <div class="footer-date">
+                                    {{tw.created_at}}
+                                </div>
+                            </div>
+                        </div>
+            
+                    </div>
+                    <div class="row pp" *ngIf="bsq == null && status ==  'success'"
+                        style="width: 100%;  margin-top: 2rem; margin-bottom: 2rem;">
+                        <div class="col-12 btnMasTweets" style="text-align: center;">
+                            <a *ngIf="page > 1" [routerLink]="['/tweets','todos', prev_page]" class="btn btn-primary">
+                                <i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Anterior</a>
+                            <a *ngIf="pages != page" [routerLink]="['/tweets','todos', next_page]" class="btn btn-primary">Siguiente
+                                <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+            
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+            <!--AQUI IFRAME-->
+            <iframe width="100%" height="600"
+                src="https://app.powerbi.com/view?r=eyJrIjoiYjkwYzU4NTItNzI1MS00NDdhLTk2ZmUtOTA5NWQ0MTNkNjEyIiwidCI6ImUwMjU3MDNhLWRiOGQtNDA1OS1hMWY5LWM4YzNiMjRhMDUzNiIsImMiOjR9"
+                frameborder="0" allowFullScreen="true"></iframe>
+            
+            
+
+        </div>
+    </div>
+
+
+</div>
+
+   
+
+   

@@ -1,0 +1,136 @@
+h5,h3,h2,h1,p,a{
+    font-family: 'Righteous', cursive;
+    margin: 0;
+}
+
+.container{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100% !important;
+}
+.nav{
+       padding: .5rem 4rem;
+    width: 100%;
+    height: 6rem;
+}
+.nav img{
+    height: 80%;
+}
+
+.filtros{
+    padding: 1rem 3rem;
+}
+
+.filtros .form-group{
+    margin-top: 2rem;
+}
+.tweets{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tweets .tweet{
+    box-shadow: 0px 0px 20px #444;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    min-width: 400px;
+    max-width: 400px;
+    height: 300px;
+   border-radius: 10px;
+    margin: 1rem;
+
+}
+
+.tweets .tweet .tweet-cabecera{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 18%;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.tweets .tweet .tweet-cabecera .imgUser{
+    width: 15%;
+    height: 100%;
+}
+.tweets .tweet .tweet-cabecera .imgUser img{
+    width: 100%;
+    height: 100%;
+}
+.tweets .tweet .tweet-cabecera .user{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.tweets .tweet .tweet-cabecera .user h3{
+    font-size: 16px;
+}
+
+.tweets .tweet .tweet-cabecera .user span{
+    margin-left: 10px;
+    font-family: 'Exo', sans-serif;
+    color: gray;
+    font-size: 14px;
+}
+.tweets .tweet .tweet-content{
+    width: 100%;
+    height: 62%;
+   
+    padding: 1rem;
+}
+.tweets .tweet .tweet-content p{
+font-family: 'Exo', sans-serif !important;
+}
+
+.tweets .tweet .tweet-footer{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    justify-content: space-between;
+     
+}
+
+.footer-date{
+    font-family: 'Exo', sans-serif;
+    color: #3c3c3c;
+    font-size: 14px;
+}
+
+.footer-like{
+    font-family: 'Exo', sans-serif;
+}
+
+.btnMasTweets a:nth-child(1){
+    margin-right: 10px;
+
+}
+.btnMasTweets a:nth-child(2){
+    margin-left: 10px;
+    
+}
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+.embed-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
